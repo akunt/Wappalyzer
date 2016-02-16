@@ -18,30 +18,11 @@ Refer to the [wiki](https://github.com/AliasIO/Wappalyzer/wiki) for
 *Licensed under the [GPL](https://github.com/AliasIO/Wappalyzer/blob/master/LICENSE).*
 
 
-## Getting Started
+## Docker Docker Docker
+This customization of Wappalyzer utilizes the ruby driver within Docker. Run
 
-This section describes how to set up a development environment. Everything you
-need is contained in a [Docker image](https://registry.hub.docker.com/u/wappalyzer/dev/)
-which is managed by Vagrant.
+```docker build -t wappalyzer .```
 
-Running this environment optional but recommended as it provides some helpful tools.
+to build the image. Afterwwards you can use Wappalyzer by running
 
-First, install [Docker](https://www.docker.com/) and [Vagrant](https://www.vagrantup.com/)
-on your system.
-
-Clone the Wappalyzer repository and open the newly created directory in a
-terminal. Run `vagrant up` to start the environment.
-
-Run `vagrant ssh` to access the environment and read usage instructions.
-
-```shell
-$ git clone https://github.com/AliasIO/Wappalyzer.git wappalyzer
-$ cd wappalyzer
-$ vagrant up
-$ vagrant ssh
-```
-
-To stop the environment, run `vagrant halt`.
-
-If a new Docker image becomes available, rebuild the environment with
-`vagrant destroy -y && vagrant up`.
+``` docker run wappalyzer "http://example.com"```
