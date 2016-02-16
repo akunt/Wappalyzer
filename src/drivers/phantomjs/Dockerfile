@@ -1,7 +1,5 @@
 FROM phusion/baseimage
 
-MAINTAINER Elbert Alias <elbert@alias.io>
-
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
@@ -18,9 +16,8 @@ RUN \
 	curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvjC phantomjs --strip 1
 
 # Wappalyzer
-RUN \
-	mkdir wappalyzer && \
-	curl -sSL https://github.com/AliasIO/Wappalyzer/archive/master.tar.gz | tar xzC wappalyzer --strip 1
+RUN mkdir /wappalyzer
+ADD . /wappalyzer
 
 RUN wappalyzer/bin/wappalyzer-links wappalyzer
 
